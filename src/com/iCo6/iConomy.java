@@ -39,7 +39,7 @@ import java.util.Timer;
 import org.bukkit.Server;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
-import org.bukkit.craftbukkit.CraftServer;
+// import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.entity.Player;
 import org.bukkit.permissions.Permission;
 import org.bukkit.plugin.Plugin;
@@ -98,9 +98,9 @@ public class iConomy extends JavaPlugin {
             // Server & Terminal Support
             Server = getServer();
 
-            if(getServer().getServerName().equalsIgnoreCase("craftbukkit")) {
-                TerminalSupport = ((CraftServer)getServer()).getReader().getTerminal().isANSISupported();
-            }
+            // if(getServer().getServerName().equalsIgnoreCase("craftbukkit")) {
+            //     TerminalSupport = ((CraftServer)getServer()).getReader().getTerminal().isANSISupported();
+            // }
 
             // Get general plugin information
             info = getDescription();

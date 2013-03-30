@@ -7,7 +7,7 @@ version: 6.0.10b
 commands:
     money:
       aliases: [iConomy, iCo]
-      description: Distrobute, Check, Use Currency.
+      description: 检查当前持有的货币
 
 # Generator Data
 generators: [bukget]
@@ -33,7 +33,7 @@ engine:
 permissions:
     iConomy.*:
         default: op
-        description: Gives access to all commands
+        description: 拥有全部权限
         children:
             iConomy.help: true
             iConomy.holdings: true
@@ -50,7 +50,7 @@ permissions:
             iConomy.accounts.purge: true
             iConomy.accounts.empty: true
     iConomy.accounts.*:
-        description: Gives access only to higher level commands
+        description: 拥有高等级权限
         children:
             iConomy.accounts.create: true
             iConomy.accounts.remove: true
@@ -62,7 +62,7 @@ permissions:
             iConomy.accounts.purge: true
             iConomy.accounts.empty: true
     iConomy.plus:
-        description: Gives access to user plus only commands
+        description: 拥有普通之上的权限
         children:
             iConomy.help: true
             iConomy.holdings: true
@@ -70,83 +70,83 @@ permissions:
             iConomy.top: true
             iConomy.payment: true
     iConomy.user:
-        description: Gives access to user only commands
+        description: 拥有普通权限
         children:
             iConomy.help: true
             iConomy.holdings: true
             iConomy.payment: true
     iConomy.help:
-        description: Allows you to request help information.
+        description: 让你获得一点帮助
         default: op
         command: "/money help"
     iConomy.holdings:
-        description: Check your balance.
+        description: 检查当前持有的货币
         default: op
         command: "/money"
     iConomy.holdings.others:
-        description: Check other players balance.
+        description: 检查别人持有的货币
         default: op
         command: "/money <account-name>"
         examples:
           - "/money Nijikokun"
     iConomy.top:
-        description: View top-most accounts.
+        description: 查看财富排行
         default: op
         command: "/money top"
     iConomy.payment:
-        description: Send money to others.
+        description: 付给其他人钱
         default: op
         command: "/money pay <account-name> <amount>"
         examples:
           - "/money pay Nijikokun 30"
     iConomy.accounts.create:
-        description: Create an account.
+        description: 创建一个收款账号
         default: op
         command: "/money create <account-name> [amount]"
         examples:
           - "/money create Nijikokun"
           - "/money create Nijikokun 30"
     iConomy.accounts.remove:
-        description: Remove an existing account
+        description: 删除一个收款账号
         default: op
         command: "/money remove <account-name>"
         examples:
           - "/money remove Nijikokun"
     iConomy.accounts.give:
-        description: Give account a certain amount
+        description: 让特定账号增加一定金钱
         default: op
         command: "/money give <account-name> <amount>"
         examples:
           - "/money give Nijikokun 30"
     iConomy.accounts.take:
-        description: Take a certain amount from an account
+        description: 让特定账号减少一定金钱
         default: op
         command: "/money take <account-name> <amount>"
         examples:
           - "/money take Nijikokun 30"
     iConomy.accounts.set:
-        description: Set an account's balance to this amount
+        description: 设置特定账号的金钱
         default: op
         command: "/money set <account-name> <amount>"
         examples:
           - "/money set Nijikokun 30"
     iConomy.accounts.status:
-        description: Check to see the status of an account (Visible, Hidden, Etc)
+        description: 查看特定账号的可见状态 (可见, 隐藏, 等)
         default: op
         command: "/money status <account-name>"
         examples:
           - "/money status Nijikokun"
     iConomy.accounts.status.set:
-        description: Set the status of an account (Visible (1), Hidden (0))
+        description: 设置特定账号的可见状态 (可见 (1), 隐藏 (0))
         default: op
         command: "/money status <account-name>"
         examples:
           - "/money status Nijikokun"
     iConomy.accounts.purge:
-        description: Purge all accounts with default creation value.
+        description: 清除所有账户
         default: op
         command: "/money purge"
     iConomy.accounts.empty:
-        description: Empty / Drop entire database of accounts.
+        description: 删除所有用户数据
         default: op
         command: "/money empty"
